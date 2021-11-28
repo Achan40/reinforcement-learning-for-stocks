@@ -1,15 +1,22 @@
-from sandbox_secret import SECRET_KEY
+from sandbox_secret import SECRET_KEY as SAND_SECRET_KEY
+from secret import SECRET_KEY
 import os
 import pandas as pd
 import requests
 import json
 
-def get_dataset(symbol, timeframe='max'):
-    url_prefix = "https://sandbox.iexapis.com/stable/"
+def get_dataset(symbol, timeframe='max', version='sandbox'):
+    # Flag to use production api or not. Add your keys in sandbox_secret.py/secret.py files located in the root directory
+    if version == 'stable':
+        url_prefix = "https://cloud.iexapis.com/stable"
+        KEY = SECRET_KEY
+    else:
+        url_prefix = "https://sandbox.iexapis.com/stable/"
+        KEY = SAND_SECRET_KEY
 
     # Gets the stock price at closing for some date parameter
     # path = f'stock/{symbol}/chart/{timeframe}?chartCloseOnly=True&&token={SECRET_KEY}'
-    path = f'stock/{symbol}/chart/{timeframe}?&&token={SECRET_KEY}'
+    path = f'stock/{symbol}/chart/{timeframe}?&&token={KEY}'
     full_url = requests.compat.urljoin(url_prefix, path)
 
     resp = requests.get(full_url)
