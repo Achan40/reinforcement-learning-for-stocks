@@ -1,4 +1,4 @@
-from utils import get_dataset
+from utils import get_dataset, load_dataset
 import argparse
 
 if __name__ == '__main__':
@@ -11,4 +11,9 @@ if __name__ == '__main__':
     if args.getdata is not None:
         # * operator used to expand iterable into function call
         get_dataset(*args.getdata)
+    
+    tmp = load_dataset('IBM')
+    print(tmp)
+
+
     

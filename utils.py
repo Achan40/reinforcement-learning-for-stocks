@@ -32,4 +32,8 @@ def get_dataset(symbol, timeframe='max', version='sandbox'):
     prices.to_csv('data\\' + symbol + '.csv')
 
 def load_dataset(somefile):
-    pass
+    # read a file from the data folder, pass in the name of the file to the function
+    df = pd.read_csv('data\\' + somefile + '.csv')
+    # drop unnecessary columns
+    df.drop(columns=['Unnamed: 0','symbol','id','key','subkey','label','marketChangeOverTime'], inplace=True)
+    return df
