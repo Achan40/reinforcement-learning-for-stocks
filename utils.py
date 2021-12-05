@@ -5,6 +5,7 @@ import pandas as pd
 import requests
 import json
 
+# retrieve a dataset from the IEX Cloud API
 def get_dataset(symbol, timeframe='max', version='sandbox'):
     # Flag to use production api or not. Add your keys in sandbox_secret.py/secret.py files located in the root directory
     if version == 'stable':
@@ -35,5 +36,7 @@ def load_dataset(somefile):
     # read a file from the data folder, pass in the name of the file to the function
     df = pd.read_csv('data\\' + somefile + '.csv')
     # drop unnecessary columns
-    df.drop(columns=['Unnamed: 0','symbol','id','key','subkey','label','marketChangeOverTime'], inplace=True)
+    df.drop(columns=['Unnamed: 0','symbol','updated','id','key','subkey','label','marketChangeOverTime'], inplace=True)
+    # set the index to be the date
+    df.set_index('date', inplace=True)
     return df

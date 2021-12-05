@@ -13,7 +13,8 @@ if __name__ == '__main__':
         get_dataset(*args.getdata)
     
     tmp = load_dataset('IBM')
-    print(tmp)
+
+
 
 
     

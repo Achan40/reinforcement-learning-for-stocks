@@ -6,7 +6,7 @@ Python 3.7 To install the necessary libraries, run `pip install -r requirements.
 
 ### Table of Contents
 * `agent.py`: 
-* `envs.py`: 
+* `env.py`: 
 * `model.py`: 
 * `utils.py`: some utility functions
 * `run.py`: 
