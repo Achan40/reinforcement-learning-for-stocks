@@ -49,7 +49,7 @@ class Agent(object):
         target_f[range(batch_size), actions] = target
 
         # update our nn model 
-        self.model.fit(states, target_f, epochs=1, verbose=1)
+        self.model.fit(states, target_f, epochs=1, verbose=0)
 
         # reduce exploration rate everytime we perform an experience replay
         if self.epsilon > self.epsilon_min:
