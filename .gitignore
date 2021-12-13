@@ -132,8 +132,10 @@ dmypy.json
 sandbox_secret.py
 secret.py
 
-# data
+# additional folder
 data/
+portfolioval/
+weights/
 
 # command line shortcut text file
 clitmp.txt
