@@ -23,3 +23,6 @@ Python 3.7 To install the necessary libraries, run `pip install -r requirements.
 `python main.py --mode train --dataset <dataset>`
 Run model training. Additional arguements include: `--episode` (number of episodes to run), `--batch_size` (batch size for experience replay), `--initial_invest` (amount of initial investment), `--dataset` (name of the dataset to use). Note that a checkpoints for the model weights are created every 5 episodes.
 
+* Testing Deep Q agent
+`python main.py --dataset <dataset> --mode test --weights <trained_model>`
+Test the model using the test split of a dataset. `<trained_model>` is the file location of the trained model (should be located in the weights directory which is created upon the first run of the script).
