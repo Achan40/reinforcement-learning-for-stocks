@@ -1,5 +1,5 @@
 # reinforcement-learning-for-stocks
-Creating a reinforcement learning model to trade a single stock. 
+My attempt at using Tensorflow and other related python packages to create a reinforming learning model to trade stocks. The model uses the historical data of a single stock to train and test the model, data is pulled from the [IEX Cloud API](https://iexcloud.io). This project and its trained models are not intended to be used in production, I simply thought it would be a good way to apply some of the machine learning concepts I explored in my free time. 
 
 ### Dependencies
 Python 3.7 To install the necessary libraries, run `pip install -r requirements.txt`
